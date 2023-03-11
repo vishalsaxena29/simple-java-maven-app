@@ -3,8 +3,8 @@ pipeline
   agent { label 'New-Agent1'}
   
   tools {
-      maven 'mymaven'
-    }
+    maven 'mymaven'
+  }
 
   stages {
 
@@ -19,9 +19,5 @@ pipeline
                 }
             }
     }
-
-
   }
-
-
 }
