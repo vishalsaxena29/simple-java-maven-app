@@ -7,25 +7,14 @@ pipeline
     stage ('Build')
     { 
       steps{
-          echo "This is build stage "
+          sh 'mvc clean package'
       }
+      post {
+        success {
+            archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
     }
-
-    stage ('Test') 
-    {
-      steps{
-          echo "This is test stage"
-      }
-    }
-
-    stage ('Deploy')
-    {
-      steps{
-          echo "This is Deployment stage"
-      }
-    }
-
-
 
 
   }
